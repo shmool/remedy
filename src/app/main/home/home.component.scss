@@ -1,0 +1,14 @@
+.start-button {
+  width: 240px;
+  height: 240px;
+}
+
+.start-button-content {
+  display: flex;
+  flex-direction: column;
+  font-size: xx-large;
+
+  .material-icons {
+    font-size: 140px;
+  }
+}

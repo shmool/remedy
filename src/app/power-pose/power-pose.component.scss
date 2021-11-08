@@ -1,0 +1,67 @@
+:host {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.power-pose-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.power-pose {
+  position: absolute;
+  background: rgba(211, 169, 230, 0.7);
+
+}
+
+.head {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  top: -100px;
+}
+
+.body {
+  height: 120px;
+  width: 50px;
+  border-radius: 50px;
+  top: -40px;
+}
+
+.left-arm {
+  height: 120px;
+  width: 30px;
+  border-radius: 50px;
+  top: -140px;
+  right: -85px;
+  transform: rotate(45deg);
+}
+
+.right-arm {
+  height: 120px;
+  width: 30px;
+  border-radius: 50px;
+  top: -140px;
+  right: 55px;
+  transform: rotate(-45deg);
+}
+
+.left-leg {
+  height: 140px;
+  width: 30px;
+  border-radius: 50px;
+  top: 70px;
+  right: -65px;
+  transform: rotate(-25deg);
+}
+
+.right-leg {
+  height: 140px;
+  width: 30px;
+  border-radius: 50px;
+  top: 70px;
+  right: 35px;
+  transform: rotate(25deg);
+}

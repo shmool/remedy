@@ -1,0 +1,13 @@
+<div class="title" *ngIf="iteration === 1">Breathe the 💩 out</div>
+<div class="title" *ngIf="iteration === 2">Breathe the ☀️ in</div>
+
+<div class="counter">
+  <div class="number" [@timerChange]="counter">{{counter}}</div>
+  <div class="spinner" [style.--spin]="spin">
+    <div class="dot"></div>
+  </div>
+</div>
+
+
+<mat-slider min="1000" max="20000" step="50" [value]="interval" (change)="changeInterval($event)"></mat-slider>
+

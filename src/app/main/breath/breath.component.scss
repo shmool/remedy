@@ -1,0 +1,69 @@
+$counter-size: 300px;
+$counter-border-width: 16px;
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 32px;
+  height: 60px;
+}
+
+.counter {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $counter-size;
+  height: $counter-size;
+  border-radius: 50%;
+  border: solid teal $counter-border-width;
+  background: rgba(0, 128, 128, 0.3);
+
+  --count: 9;
+
+
+  .spinner {
+    position: absolute;
+    width: $counter-size;
+    height: $counter-size;
+    border: 2px solid #045b5b;
+    border-radius: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-content: center;
+    animation: rotate var(--spin) linear infinite forwards;
+  }
+
+  .dot {
+    width: $counter-border-width - 2;
+    height: $counter-border-width - 2;
+    border-radius: 50%;
+    background-image: linear-gradient(-45deg , rgb(9 93 112) 0%, #3ab794 100%);
+    animation: rotate var(--spin) linear infinite reverse;
+
+  }
+
+  .number {
+    font-size: 180px;
+    color: teal;
+  }
+}
+
+mat-slider {
+  width: $counter-size;
+  padding: 0;
+  margin-top: 40px;
+}

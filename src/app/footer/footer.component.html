@@ -1,0 +1,5 @@
+  <a *ngIf="nextStep$ | async as nextStep" [routerLink]="nextStep">
+  <button mat-fab class="next-btn" color="accent" aria-label="Next step">
+    <mat-icon [inline]="true">arrow_forward</mat-icon>
+  </button>
+  </a>

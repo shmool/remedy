@@ -1,6 +1,14 @@
 # Remedy
 
+A small web app that will help you relieve stress and gain your focus back in 3 short, simple steps.
+[Try out the Remedy app!](https://remedy.shmool.me/)
+
+The app is WIP, soon important features will be added like saving your configuration and inputs as well as PWA support.
+
+You're welcome to lend a hand here by opening issues / feature requests, reviewing the code, advising and submitting pull requests.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.12.
+It's deployed on Azure Static Web Apps.
 
 ## Development server
 

@@ -7,7 +7,7 @@
 <form class="form" *ngIf="edit; else missionBlock">
   <mat-form-field class="form-field" appearance="fill">
     <mat-label>My mission in this world</mat-label>
-    <textarea matInput [mat-autosize]="true" #missionEditor></textarea>
+    <textarea matInput [mat-autosize]="true" #missionEditor [value]="mission"></textarea>
   </mat-form-field>
   <button (click)="saveMission(missionEditor.value)" mat-fab class="save-btn" color="accent" aria-label="Save mission">
     <mat-icon [inline]="true">done</mat-icon>
@@ -15,5 +15,8 @@
 </form>
 <ng-template #missionBlock>
   <div class="title">{{ mission }}</div>
+  <button (click)="edit = true" mat-fab class="save-btn" color="accent" aria-label="Edit mission">
+    <mat-icon [inline]="true">edit</mat-icon>
+  </button>
 </ng-template>
 

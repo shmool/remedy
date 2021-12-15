@@ -9,8 +9,9 @@
 
 .title {
   font-size: 32px;
-  height: 60px;
+  // height: 60px;
   z-index: 1;
+  line-height: 42px;
 }
 
 .form {
@@ -32,7 +33,8 @@
 
 .save-btn {
     font-size: 36px;
-    color: rebeccapurple
+    color: rebeccapurple;
+    align-self: flex-end;
 }
 
 

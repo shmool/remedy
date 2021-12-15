@@ -1,3 +1,4 @@
+import { StrorageService } from './../../strorage.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MissionComponent implements OnInit {
   edit = true;
-  mission = 'teach Angular';
+  mission = '';
 
-  constructor() { }
+  constructor(private storageService: StrorageService) { }
 
   ngOnInit(): void {
+    this.mission = this.storageService.getFromLocalStorage('mission') || '';
+    this.edit = this.mission === '';
   }
 
   saveMission(missionText: string) {
     this.mission = missionText;
     this.edit = false;
+    this.storageService.saveToLocalStorage('mission', missionText);
   }
 }

@@ -1,3 +1,4 @@
+import { StrorageService } from './../../strorage.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Route } from '@angular/compiler/src/core';
@@ -12,13 +13,18 @@ import { Observable } from 'rxjs';
 export class GratitudeComponent implements OnInit {
   counter$!: Observable<string | null>;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private storageService: StrorageService) {
   }
 
   ngOnInit(): void {
     this.counter$ = this.route.paramMap.pipe(
       map(params => params.get('id'))
       )
+  }
+
+  saveGratitude(e: any) {
+    this.storageService.saveGratitude(e.target.value);
+    e.target.value = '';
   }
 
 }

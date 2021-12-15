@@ -4,12 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class StrorageService {
+  // gratitudeList = [];
 
   constructor() { }
 
   saveGratitude(graditude: string) {
-    const gratitudeList = JSON.parse(this.getFromLocalStorage('gratitudeList') || '');
-
+    const gratitudeList = JSON.parse(this.getFromLocalStorage('gratitudeList') || '[]');
+    gratitudeList.push(graditude);
+    this.saveToLocalStorage('gratitudeList', JSON.stringify(gratitudeList));
   }
 
   saveToLocalStorage(key: string, value: string) {

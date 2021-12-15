@@ -1,3 +1,4 @@
+import { StrorageService } from './../../strorage.service';
 import { Component, ElementRef, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
 import { trigger, transition, state, animate, style, keyframes } from '@angular/animations';
 import {MatSliderChange} from '@angular/material/slider';
@@ -24,14 +25,14 @@ const ITERATIONS = 2;
 export class BreathComponent implements OnInit {
   iteration = 1;
   counter = COUNT;
-  interval = 7800;
+  interval = +(this.storageService.getFromLocalStorage('breathe') || 7800);
   @HostBinding("style.--spin")
   @Input() spin = this.interval/1000+'s';
 
   @HostBinding("style.--transform")
   @Input() transform = 'matrix(0,0,0,0)';
 
-  constructor() {
+  constructor(private storageService: StrorageService) {
     // while (this.count === 5) {
 
     // }
@@ -67,5 +68,6 @@ export class BreathComponent implements OnInit {
     // console.log(requestAnimationFrame(this.spinningElem.nativeElement));
     // this.transform = getComputedStyle(this.spinningElem.nativeElement).transform;
     this.spin = this.interval/1000+'s';
+    this.storageService.saveToLocalStorage('breathe', this.interval + '');
   }
 }

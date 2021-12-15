@@ -3,6 +3,6 @@
   <div class="counter">{{ counter$ | async }}</div>
   <mat-form-field class="form-field" appearance="fill">
     <mat-label>Express gratitude</mat-label>
-    <textarea matInput [mat-autosize]="true"></textarea>
+    <textarea matInput [mat-autosize]="true" (blur)="saveGratitude($event)"></textarea>
   </mat-form-field>
 </form>

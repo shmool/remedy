@@ -1,7 +1,6 @@
 import { StrorageService } from './../../strorage.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Route } from '@angular/compiler/src/core';
 import { map } from 'rxjs/operators'
 import { Observable } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, RouterEvent, Event } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, shareReplay, tap } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 const STEPS = [
@@ -21,7 +21,8 @@ export class StepsService {
     this.nextStep$ = this.router.events.pipe(
       filter((e: Event): e is NavigationEnd => e instanceof NavigationEnd),
       map((event:NavigationEnd) => event.url.slice(1)),
-      map(url => STEPS[STEPS.indexOf(url) + 1] || '')
+      map(url => STEPS[STEPS.indexOf(url) + 1] || ''),
+      shareReplay()
     )
 
 
